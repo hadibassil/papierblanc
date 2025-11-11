@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Papierblanc</title>
+  <meta http-equiv="refresh" content="0; url=/en/">
+  <script>
+    // Auto-detect browser language and redirect
+    const userLang = navigator.language || navigator.userLanguage;
+    if (userLang.startsWith('fr')) {
+      window.location.href = '/fr/';
+    } else if (userLang.startsWith('es')) {
+      window.location.href = '/es/';
+    } else {
+      window.location.href = '/en/';
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+  <p><a href="/en/">English</a> | <a href="/fr/">Français</a> | <a href="/es/">Español</a></p>
+</body>
+</html>
