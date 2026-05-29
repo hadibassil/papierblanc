@@ -1,0 +1,129 @@
+{
+  "title": "Journal Papier Blanc",
+  "subtitle": "Articles structurés sur la stratégie technique, l’architecture, les opérations et l’organisation. Mettez ce fichier à jour pour ajouter ou modifier le contenu du blog sans réécrire le modèle de page.",
+  "posts": [
+    {
+      "slug": "infrastructure-souveraine-avec-proxmox",
+      "category": "Centre de données",
+      "title": "Construire une infrastructure souveraine avec Proxmox et des plateformes auto-hébergées",
+      "excerpt": "Pourquoi les organisations qui gèrent des données sensibles choisissent de plus en plus la virtualisation sur site, les briques open source et des opérations internes par défaut.",
+      "publishedAt": "Avril 2026",
+      "readingTime": "7 min de lecture",
+      "author": "Papier Blanc",
+      "tags": ["Proxmox", "Auto-hébergé", "Confidentialité", "Datacenter"],
+      "sections": [
+        {
+          "type": "paragraph",
+          "title": "Pourquoi la souveraineté est importante",
+          "body": [
+            "Pour de nombreuses organisations, l’infrastructure n’est plus seulement un choix d’hébergement. C’est une décision de contrôle. L’endroit où les systèmes s’exécutent, les personnes qui peuvent y accéder et la manière dont les données circulent entre les environnements influencent directement la confidentialité, le risque et la résilience opérationnelle.",
+            "Un modèle de datacenter auto-hébergé donne aux équipes davantage de contrôle sur le chemin critique. Au lieu de faire passer les systèmes centraux par des plateformes externes par défaut, l’entreprise peut garder les charges sensibles, la recherche privée et la connaissance interne dans une infrastructure qu’elle gouverne réellement."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Ce qu’une base on-prem solide comprend généralement",
+          "items": [
+            "Une virtualisation en cluster pour un placement flexible des charges et une meilleure reprise",
+            "Des services internes d’identité, de supervision, de sauvegarde et d’automatisation",
+            "Une segmentation réseau entre les laboratoires, la production et les charges privées",
+            "Une visibilité opérationnelle sur la configuration des systèmes et leurs changements"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "Exemple de définition d’infrastructure",
+          "language": "yaml",
+          "code": "cluster:\\n  platform: proxmox\\n  nodes:\\n    - name: pve-01\\n      role: compute\\n    - name: pve-02\\n      role: compute\\n    - name: pve-03\\n      role: backup\\nservices:\\n  - identity\\n  - monitoring\\n  - internal-registry\\n  - backup-orchestrator\\npolicy:\\n  internet_access: restricted\\n  data_location: on_prem"
+        },
+        {
+          "type": "callout",
+          "title": "Orientation opérationnelle",
+          "body": [
+            "L’open source est précieux ici non seulement pour son coût, mais aussi parce qu’il donne à l’organisation une visibilité directe et un contrôle architectural réel.",
+            "C’est particulièrement important lorsque l’environnement traite des informations privées d’entreprise ou de la recherche qui ne devrait pas quitter le périmètre réseau sans nécessité."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "logiciel-interne-pour-exigences-precises",
+      "category": "Ingénierie logicielle",
+      "title": "Pourquoi le logiciel interne sur mesure reste le meilleur choix pour des exigences métier précises",
+      "excerpt": "Les logiciels génériques échouent souvent là où les détails métier comptent le plus. Les systèmes sur mesure permettent de concevoir autour des vrais workflows plutôt qu’autour des hypothèses d’un éditeur.",
+      "publishedAt": "Avril 2026",
+      "readingTime": "6 min de lecture",
+      "author": "Papier Blanc",
+      "tags": ["Logiciel sur mesure", "Architecture", "Outils internes"],
+      "sections": [
+        {
+          "type": "paragraph",
+          "title": "Le coût caché des outils génériques",
+          "body": [
+            "Les plateformes prêtes à l’emploi peuvent sembler efficaces au départ, mais elles créent souvent de la friction là où l’entreprise est la plus spécifique : validations, exceptions, terminologie interne et transmissions entre équipes.",
+            "Cette friction apparaît généralement sous forme de contournements manuels, de doubles saisies, d’intégrations fragiles et d’une dette de processus croissante."
+          ]
+        },
+        {
+          "type": "quote",
+          "quote": "Le meilleur logiciel interne paraît souvent évident avec le recul, parce qu’il correspond tellement bien à l’entreprise que les équipes cessent de remarquer l’outil et se concentrent sur le travail.",
+          "attribution": "Papier Blanc"
+        },
+        {
+          "type": "list",
+          "title": "Ce qu’une meilleure plateforme interne améliore généralement",
+          "items": [
+            "La précision des workflows pour les validations et cas particuliers",
+            "La cohérence des données entre les systèmes métier",
+            "La clarté opérationnelle grâce au langage et aux modèles propres à l’entreprise",
+            "L’adaptabilité à long terme à mesure que l’organisation évolue"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "Exemple de frontière de service",
+          "language": "typescript",
+          "code": "interface OrderApprovalRequest {\\n  orderId: string;\\n  businessUnit: 'research' | 'operations' | 'finance';\\n  requiresLegalReview: boolean;\\n}\\n\\ninterface ApprovalDecision {\\n  status: 'approved' | 'rejected' | 'needs-review';\\n  ownerRole: string;\\n  reason?: string;\\n}"
+        }
+      ]
+    },
+    {
+      "slug": "organisations-dingenierie-plus-legeres-a-lere-de-lia",
+      "category": "Gestion des talents",
+      "title": "Des organisations d’ingénierie plus légères à l’ère de l’IA",
+      "excerpt": "L’IA ne change pas seulement la productivité. Elle change la manière de structurer les équipes, les endroits où le management ajoute de la valeur et les moments où la restructuration devient nécessaire.",
+      "publishedAt": "Avril 2026",
+      "readingTime": "8 min de lecture",
+      "author": "Papier Blanc",
+      "tags": ["IA", "Organisation", "Leadership", "Restructuration"],
+      "sections": [
+        {
+          "type": "paragraph",
+          "title": "La restructuration est un choix stratégique",
+          "body": [
+            "À mesure que les équipes d’ingénierie gagnent en levier grâce aux workflows assistés par l’IA, l’organisation doit reconsidérer ses anciennes hypothèses sur la taille des équipes, les couches de management et les structures de coordination.",
+            "La vraie question n’est pas de savoir si chaque rôle disparaît. La vraie question est de savoir si chaque rôle crée encore suffisamment de valeur par rapport au nouveau modèle d’exécution."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Signaux qu’une organisation d’ingénierie doit être repensée",
+          "items": [
+            "Trop de personnes coordonnent le travail et trop peu le livrent",
+            "Les managers agissent comme des routeurs de processus plutôt que comme des leaders",
+            "Les décisions techniques remontent à travers plusieurs couches non techniques",
+            "Une forte charge de réunions avec peu de clarté dans les décisions"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "Une lecture pragmatique",
+          "body": [
+            "Les structures modernes favorisent souvent des équipes plus petites, plus seniors, avec une responsabilité plus claire et moins de couches de traduction entre l’intention métier et l’exécution technique.",
+            "Cela ne signifie pas supprimer le leadership. Cela signifie distinguer le leadership de la surcharge organisationnelle."
+          ]
+        }
+      ]
+    }
+  ]
+}

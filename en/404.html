@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 - Page Not Found | Papier Blanc</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #ffffff;
+      color: #111827;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .container {
+      max-width: 600px;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      background-color: #fafafa;
+      background-image:
+        linear-gradient(rgba(209, 213, 219, 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(209, 213, 219, 0.5) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -1;
+    }
+
+    .grid-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    .orb-blue {
+      width: 400px;
+      height: 400px;
+      background: #3b82f6;
+      top: -100px;
+      right: -100px;
+    }
+
+    .orb-amber {
+      width: 300px;
+      height: 300px;
+      background: #f59e0b;
+      bottom: -50px;
+      left: -50px;
+    }
+
+    .error-code {
+      font-size: clamp(6rem, 20vw, 12rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      color: #111827;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(1.5rem, 5vw, 2.25rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #111827;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: #6b7280;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.75rem;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #111827;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #000000;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #111827;
+      border: 1px solid #e5e7eb;
+    }
+
+    .btn-secondary:hover {
+      background: #f3f4f6;
+      border-color: #d1d5db;
+    }
+
+    .links {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .links p {
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    .links a {
+      color: #6b7280;
+      text-decoration: none;
+      margin: 0 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    .links a:hover {
+      color: #111827;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .divider-line {
+      width: 60px;
+      height: 1px;
+      background: #e5e7eb;
+    }
+
+    .divider-dot {
+      width: 6px;
+      height: 6px;
+      background: #d1d5db;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="grid-orb orb-blue"></div>
+  <div class="grid-orb orb-amber"></div>
+
+  <div class="container">
+    <div class="error-code">404</div>
+    <h1 id="title">Page Not Found</h1>
+    <p id="description">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
+
+    <div class="buttons">
+      <a href="/" class="btn btn-primary" id="homeLink">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+        <span id="homeText">Go Home</span>
+      </a>
+      <a href="/contact" class="btn btn-secondary" id="contactLink">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+        <span id="contactText">Contact Us</span>
+      </a>
+    </div>
+
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-dot"></div>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="links">
+      <p>Quick links</p>
+      <a href="/about" id="aboutLink">About</a>
+      <a href="/expertise" id="expertiseLink">Expertise</a>
+      <a href="/blog" id="blogLink">Blog</a>
+    </div>
+  </div>
+
+  <script>
+    const translations = {
+      en: {
+        title: 'Page Not Found',
+        description: "The page you're looking for doesn't exist or has been moved. Let's get you back on track.",
+        homeText: 'Go Home',
+        contactText: 'Contact Us'
+      },
+      fr: {
+        title: 'Page non trouvée',
+        description: "La page que vous recherchez n'existe pas ou a été déplacée. Retrouvez votre chemin.",
+        homeText: 'Accueil',
+        contactText: 'Nous contacter'
+      }
+    };
+
+    const lang = window.location.pathname.split('/')[1] || 'en';
+    const isFr = lang === 'fr';
+    const isEn = lang === 'en' || !lang;
+    const t = translations[isFr ? 'fr' : 'en'];
+
+    const baseUrl = isFr ? '/fr/' : '/en/';
+
+    document.getElementById('title').textContent = t.title;
+    document.getElementById('description').textContent = t.description;
+    document.getElementById('homeText').textContent = t.homeText;
+    document.getElementById('contactText').textContent = t.contactText;
+    document.getElementById('homeLink').href = baseUrl;
+    document.getElementById('contactLink').href = baseUrl + 'contact';
+    document.getElementById('aboutLink').href = baseUrl + 'about';
+    document.getElementById('expertiseLink').href = baseUrl + 'expertise';
+    document.getElementById('blogLink').href = baseUrl + 'blog';
+    document.documentElement.lang = isFr ? 'fr' : 'en';
+  </script>
+</body>
+</html>

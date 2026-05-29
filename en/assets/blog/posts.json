@@ -1,0 +1,129 @@
+{
+  "title": "Papier Blanc Journal",
+  "subtitle": "This blog focuses on using Open Source technology to achieve more, or using 'dumb' tech to solve modern problems.",
+  "posts": [
+    {
+      "slug": "sovereign-infrastructure-with-proxmox",
+      "category": "Datacenter",
+      "title": "Building Sovereign Infrastructure with Proxmox and Self-Hosted Platforms",
+      "excerpt": "Why organizations with sensitive data increasingly choose on-prem virtualization, open source building blocks, and internal-by-default operations.",
+      "publishedAt": "April 2026",
+      "readingTime": "7 min read",
+      "author": "Papier Blanc",
+      "tags": ["Proxmox", "Self-Hosted", "Privacy", "Datacenter"],
+      "sections": [
+        {
+          "type": "paragraph",
+          "title": "Why Sovereignty Matters",
+          "body": [
+            "For many organizations, infrastructure is no longer just a hosting decision. It is a control decision. Where systems run, who can access them, and how data moves between environments directly affect privacy, risk, and operational resilience.",
+            "A self-hosted datacenter model gives teams more control over the critical path. Instead of routing core systems through external platforms by default, companies can keep sensitive workloads, private research, and internal knowledge inside infrastructure they actually govern."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "What a Strong On-Prem Foundation Usually Includes",
+          "items": [
+            "Clustered virtualization for flexible workload placement and recovery",
+            "Internal identity, monitoring, backup, and automation services",
+            "Network segmentation between labs, production, and private workloads",
+            "Operational visibility into how systems are configured and changed"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "Example Infrastructure Definition",
+          "language": "yaml",
+          "code": "cluster:\\n  platform: proxmox\\n  nodes:\\n    - name: pve-01\\n      role: compute\\n    - name: pve-02\\n      role: compute\\n    - name: pve-03\\n      role: backup\\nservices:\\n  - identity\\n  - monitoring\\n  - internal-registry\\n  - backup-orchestrator\\npolicy:\\n  internet_access: restricted\\n  data_location: on_prem"
+        },
+        {
+          "type": "callout",
+          "title": "Operational Direction",
+          "body": [
+            "Open source is valuable here not just because of cost, but because it gives the organization direct visibility and architectural control.",
+            "That matters most when the environment handles private company information or research that should not casually leave the network perimeter."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "custom-software-for-exact-requirements",
+      "category": "Software Engineering",
+      "title": "Why Custom In-House Software Still Wins for Exact Business Requirements",
+      "excerpt": "Generic software often fails where business details matter most. Custom systems let companies design around real workflows instead of vendor assumptions.",
+      "publishedAt": "April 2026",
+      "readingTime": "6 min read",
+      "author": "Papier Blanc",
+      "tags": ["Custom Software", "Architecture", "Internal Tools"],
+      "sections": [
+        {
+          "type": "paragraph",
+          "title": "The Hidden Cost of Generic Tools",
+          "body": [
+            "Off-the-shelf platforms can look efficient at first, but they frequently create friction where the business is most specific: approvals, exceptions, internal terminology, and cross-team handoffs.",
+            "That friction usually shows up as manual workarounds, duplicate entry, brittle integrations, and increasing process debt."
+          ]
+        },
+        {
+          "type": "quote",
+          "quote": "The best internal software often feels obvious in hindsight because it matches the company so closely that people stop noticing the system and focus on the work.",
+          "attribution": "Papier Blanc"
+        },
+        {
+          "type": "list",
+          "title": "A Better Internal Platform Usually Improves",
+          "items": [
+            "Workflow precision for approvals and special-case handling",
+            "Data consistency across line-of-business systems",
+            "Operational clarity through company-specific language and models",
+            "Long-term adaptability as the organization evolves"
+          ]
+        },
+        {
+          "type": "code",
+          "title": "Service Boundary Sketch",
+          "language": "typescript",
+          "code": "interface OrderApprovalRequest {\\n  orderId: string;\\n  businessUnit: 'research' | 'operations' | 'finance';\\n  requiresLegalReview: boolean;\\n}\\n\\ninterface ApprovalDecision {\\n  status: 'approved' | 'rejected' | 'needs-review';\\n  ownerRole: string;\\n  reason?: string;\\n}"
+        }
+      ]
+    },
+    {
+      "slug": "leaner-engineering-organizations-in-the-ai-era",
+      "category": "Talent Management",
+      "title": "Leaner Engineering Organizations in the Age of AI",
+      "excerpt": "AI does not just change productivity. It changes how engineering teams should be structured, where management adds value, and when restructuring becomes necessary.",
+      "publishedAt": "April 2026",
+      "readingTime": "8 min read",
+      "author": "Papier Blanc",
+      "tags": ["AI", "Org Design", "Leadership", "Restructuring"],
+      "sections": [
+        {
+          "type": "paragraph",
+          "title": "Restructuring Is a Strategic Choice",
+          "body": [
+            "As engineering teams gain leverage from AI-assisted workflows, the organization has to reconsider old assumptions about team size, management layers, and coordination structures.",
+            "The question is not whether every role disappears. The question is whether each role still creates enough value relative to the new execution model."
+          ]
+        },
+        {
+          "type": "list",
+          "title": "Signals That an Engineering Org Needs Redesign",
+          "items": [
+            "Too many people coordinating work and too few shipping it",
+            "Managers acting as process routers instead of leaders",
+            "Technical decisions escalated through several non-technical layers",
+            "High meeting load with low decision clarity"
+          ]
+        },
+        {
+          "type": "callout",
+          "title": "A Practical View",
+          "body": [
+            "Modern structures often favor smaller, more senior teams with clearer ownership and fewer translation layers between business intent and technical execution.",
+            "That does not mean removing leadership. It means distinguishing leadership from overhead."
+          ]
+        }
+      ]
+    }
+  ]
+}

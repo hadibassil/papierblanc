@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://papierblanc.ca/en/sitemap.xml
